@@ -20,7 +20,7 @@ export const LearnButton = forwardRef<HTMLButtonElement, React.ButtonHTMLAttribu
         ref={ref}
         {...props}
         className={clsx(
-          "flex align-middle justify-between h-[40px] px-[16px] py-[8px] rounded-full bg-gray-800 text-white transition hover:bg-gray-700 active:scale-95",
+          "flex btn justify-between h-[40px] px-[16px] py-[8px] rounded-full bg-gray-800 text-white transition hover:bg-gray-700 active:scale-95",
           className
         )}
       >

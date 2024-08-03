@@ -85,7 +85,7 @@ export default function News() {
                       <p className="text-base">{item.description}</p>
                     </div>
                     <div className="p-6">
-                      <LearnButton className="w-[100%]"/>
+                      <LearnButton className="w-[100%] border-none" />
                     </div>
                   </div>
                 </div>
@@ -94,7 +94,7 @@ export default function News() {
           </Swiper>
 
           {/* Navigation Buttons */}
-          <div className="custom-swiper-button-prev flex items-center justify-center w-10 h-10 bg-gray-800 text-white rounded-full absolute z-10 left-2 top-1/2 transform -translate-y-1/2 cursor-pointer">
+          <div className="custom-swiper-button-prev flex items-center justify-center w-12 h-12 bg-[#474747] text-white rounded-full absolute z-10 left-0 top-1/2 transform -translate-y-1/2 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -106,11 +106,12 @@ export default function News() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M15 19l-7-7 7-7"
+                d="M19 12H5m7-7l-7 7 7 7"
               />
             </svg>
           </div>
-          <div className="custom-swiper-button-next flex items-center justify-center w-10 h-10 bg-gray-800 text-white rounded-full absolute z-10 right-2 top-1/2 transform -translate-y-1/2 cursor-pointer">
+
+          <div className="custom-swiper-button-next flex items-center justify-center w-12 h-12 bg-[#474747] text-white rounded-full absolute z-10 right-0 top-1/2 transform -translate-y-1/2 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -122,7 +123,7 @@ export default function News() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M9 5l7 7-7 7"
+                d="M5 12h14m-7-7l7 7-7 7"
               />
             </svg>
           </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
+import Image from "next/image";
 import {
   Chart as ChartJS,
   ChartOptions,
@@ -8,7 +9,6 @@ import {
   ArcElement,
   Tooltip,
   Legend,
-  Plugin,
 } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 
@@ -26,30 +26,6 @@ interface DoughnutChartData extends ChartData<"doughnut", number[], string> {
     backgroundColor: string[];
   }>;
 }
-
-const centerImagePlugin: Plugin<"doughnut"> = {
-  id: "centerImage",
-  afterDraw: (chart) => {
-    const { ctx, chartArea } = chart;
-    if (!chartArea) return;
-
-    const centerX = (chartArea.left + chartArea.right) / 2;
-    const centerY = (chartArea.top + chartArea.bottom) / 2;
-    const image = new Image();
-    image.src = "/images/logo-noword.png";
-
-    const radius =
-      Math.min(
-        chartArea.right - chartArea.left,
-        chartArea.bottom - chartArea.top
-      ) / 2;
-    const innerRadius = radius * 0.6;
-    const size = innerRadius * 1.5;
-    image.onload = () => {
-      ctx.drawImage(image, centerX - size / 2, centerY - size / 2, size, size);
-    };
-  },
-};
 
 const Tokenomics: React.FC = () => {
   const chartRef = useRef<ChartJS<"doughnut"> | null>(null);
@@ -87,26 +63,30 @@ const Tokenomics: React.FC = () => {
         display: false,
       },
       tooltip: {
-        enabled: false, 
+        enabled: true,
       },
     },
     cutout: "60%",
   };
 
   return (
-    <div className="container flex flex-col items-center justify-center min-h-screen bg-primary-background text-white p-6 mb-10">
+    <div className="container relative flex flex-col items-center justify-center min-h-screen bg-primary-background text-white p-6 mb-10">
+      
       <div className="text-center uppercase font-semibold text-[54px] leading-[54px] mb-5">
         Tokenomics
       </div>
       <div className="w-full max-w-md mb-8 relative">
         <div className="absolute inset-0 bg-chart-background rounded-full blur-xl opacity-50"></div>
         <div className="relative bg-chart-background rounded-full p-5">
-          <Doughnut
-            data={data}
-            options={options}
-            plugins={[centerImagePlugin]}
-            ref={chartRef}
-          />
+          <Doughnut data={data} options={options} ref={chartRef} />
+          <div className="absolute top-[30%] left-[30%] w-40 h-40 z-[2]">
+        <Image
+          src="/images/logo-noword.png"
+          alt="logo"
+          fill
+          quality={100}
+        />
+      </div>
         </div>
       </div>
       <div className="flex flex-col md:flex-row flex-wrap justify-center gap-4 w-full max-w-4xl">

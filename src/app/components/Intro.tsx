@@ -4,11 +4,19 @@ import Image from "next/image";
 
 export default function Intro() {
   return (
-    <section className="relative">
-      <div className="bg-[url('/images/intro-background.jpg')] bg-no-repeat bg-center bg-cover absolute top-0 left-0 w-full h-full -z-[1] ">
-        <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-[#070a13] to-transparent"></div>
-      </div>
-      <div className="flex flex-col items-center justify-center min-h-screen pb-20 pt-36">
+    <section className="relative h-[1010px]">
+      <div className="absolute top-0 left-0 w-full h-full bg-[#030712] -z-[2]"></div>
+      {/* <div className=" bg-[url('/images/intro-background.png')] bg-no-repeat bg-center absolute top-0 left-0 w-full h-full -z-[1] p-10 ">
+      </div> */}
+
+      <div className="flex flex-col items-center justify-center min-h-screen w-full h-[1010px] pb-20 pt-36">
+        <Image
+          src="/images/intro-background.png"
+          alt="Background"
+          className="absolute inset-0 object-fit: contain -z-[1]"
+          fill
+          quality={100}
+        />
         <div className="flex flex-col items-center">
           <div className="text-center font-semibold text-[54px] leading-[54px]">
             TRADE SMARTER

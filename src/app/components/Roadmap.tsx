@@ -22,7 +22,7 @@ const phases: Phase[] = [
       "Front-end development",
       "User acceptance testing",
     ],
-    bg: "linear-gradient(183.33deg, #030401 -4.81%, #2563EB 207.12%);",
+    bg: "linear-gradient(183.33deg, #030401 -4.81%, #2563EB 207.12%)",
     active: true,
   },
   {
@@ -36,7 +36,7 @@ const phases: Phase[] = [
       "CEX listing",
       "Additional DEX integrations",
     ],
-    bg: "linear-gradient(229.64deg, #030712 56.13%, rgba(59, 130, 246, 0.5) 210.94%);",
+    bg: "linear-gradient(229.64deg, #030712 56.13%, rgba(59, 130, 246, 0.5) 210.94%)",
     active: false,
   },
   {
@@ -50,7 +50,7 @@ const phases: Phase[] = [
       "Security audits",
       "User feedback",
     ],
-    bg: "linear-gradient(229.64deg, #030712 56.13%, rgba(59, 130, 246, 0.5) 210.94%);",
+    bg: "linear-gradient(229.64deg, #030712 56.13%, rgba(59, 130, 246, 0.5) 210.94%)",
     active: false,
   },
   {
@@ -64,7 +64,7 @@ const phases: Phase[] = [
       "Governance integration",
       "Strategic partnership",
     ],
-    bg: "linear-gradient(229.64deg, #030712 56.13%, rgba(59, 130, 246, 0.5) 210.94%);",
+    bg: "linear-gradient(229.64deg, #030712 56.13%, rgba(59, 130, 246, 0.5) 210.94%)",
     active: false,
   },
 ];
@@ -74,7 +74,7 @@ const Roadmap: React.FC = () => {
     <div className="bg-roadmap-background text-white py-28 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center">
-          <div className="text-center font-semibold text-[54px] leading-[54px]">
+          <div className="text-center uppercase font-semibold text-[54px] leading-[54px]">
             Roadmap
           </div>
           <div className="text-center break-words text-sm font-thin w-[60%] mt-4">
@@ -85,16 +85,16 @@ const Roadmap: React.FC = () => {
           {phases.map((phase, index) => (
             <div
               key={index}
-              className={`rounded-lg p-6 border ${
+              className={`rounded-lg px-6 pt-6 border ${
                 phase.active ? "border-blue-500" : "border-gray-500"
-              }`}
+              } flex flex-col items-center pb-10`}
               style={{ background: phase.bg }}
             >
               <h3 className="text-lg font-semibold mb-2">{phase.title}</h3>
               <Button className="flex text-sm border h-10 border-white rounded-3xl bg-transparent mb-2">{phase.quarter}</Button>
-              <ul className="space-y-2">
+              <ul className="ml-2 list-disc text-left space-y-2">
                 {phase.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="text-sm">
+                  <li key={itemIndex} className="text-sm ">
                     {item}
                   </li>
                 ))}

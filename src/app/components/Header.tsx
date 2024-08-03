@@ -21,22 +21,10 @@ export default function Header() {
               return (
                 <Link
                   key={item.id}
-                  href={item.comingSoon ? "#" : item.href}
-                  className="flex items-center px-3 py-2 transition rounded-lg hover:bg-white/15"
-                  {...(item.comingSoon
-                    ? {
-                        onClick: (ev) => ev.preventDefault(),
-                        "data-tooltip-id": "coming-soon",
-                      }
-                    : {})}
-                  {...(item.external
-                    ? {
-                        target: "_blank",
-                        rel: "noreferrer noopener",
-                      }
-                    : {})}
+                  href={item.href}
+                  className="flex items-center px-3 py-2 rounded-lg text-gray-400 hover:bg-white/15 hover:text-white transition-transform duration-300 hover:filter hover:invert hover:brightness-0 hover:contrast-100 "
                 >
-                  <Image src={item.icon} alt="logo" width={20} height={22} quality={100} className="mr-1"  />
+                  <Image src={item.icon} alt="logo" width={20} height={22} quality={100} className="mr-1 "  />
                   {item.title}
                 </Link>
               );
