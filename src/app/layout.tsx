@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     title: "Welcome To Trade Master",
     description:
       "Welcome to TON Fusion, the premier DEX aggregator built on TONSquare, offering lightning-fast swaps, high-yield staking, and deep liquidity pools.",
-    site: "@piraterealm",
-    images: "/covers/main.jpeg",
+    site: "@trademaster",
+    images: "/logo-large.png",
   },
   openGraph: {
     title: "Welcome To Trade Master",
     description:
       "Welcome to TON Fusion, the premier DEX aggregator built on TONSquare, offering lightning-fast swaps, high-yield staking, and deep liquidity pools.",
-    images: "/covers/main.jpeg",
+    images: "/logo-large.png",
   },
 };
 
