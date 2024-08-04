@@ -119,9 +119,9 @@ const Tokenomics: React.FC = () => {
                       backgroundColor: bgColor,
                     }}
                   ></div>
-                  <span className="text-[54px] font-normal">{percentage}%</span>
+                  <span className="text-[28px] font-medium">{percentage}%</span>
                 </div>
-                <span className="text-base font-normal text-gray-300">
+                <span className="text-base font-extralight text-gray-300">
                   {label}
                 </span>
               </div>
@@ -149,9 +149,9 @@ const Tokenomics: React.FC = () => {
                     className="w-4 h-4 rounded-full mr-3"
                     style={{ backgroundColor: bgColor }}
                   ></div>
-                  <span className="text-[54px] font-normal">{percentage}%</span>
+                  <span className="text-[28px] font-medium">{percentage}%</span>
                 </div>
-                <span className="text-base font-normal text-gray-300">
+                <span className="text-base font-extralight text-gray-300">
                   {label}
                 </span>
               </div>
