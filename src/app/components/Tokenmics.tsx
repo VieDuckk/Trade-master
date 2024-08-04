@@ -11,6 +11,8 @@ import {
   Legend,
 } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
+import fonts from "@/configs/fonts";
+import clsx from "clsx";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -71,8 +73,12 @@ const Tokenomics: React.FC = () => {
 
   return (
     <div className="container relative flex flex-col items-center justify-center min-h-screen bg-primary-background text-white p-6 mb-10">
-      
-      <div className="text-center uppercase font-semibold text-[54px] leading-[54px] mb-5">
+      <div
+        className={clsx(
+          fonts.clashDisplay.className,
+          "text-center uppercase font-semibold text-[54px]  lg:leading-[54px] mb-5"
+        )}
+      >
         Tokenomics
       </div>
       <div className="lg:w-[448px] lg:h-[448px] w-[300px] h-[300px] mb-8 relative">
@@ -80,13 +86,13 @@ const Tokenomics: React.FC = () => {
         <div className="relative lg:w-[448px] lg:h-[448px] w-[300px] h-[300px] bg-chart-background rounded-full p-5">
           <Doughnut data={data} options={options} ref={chartRef} />
           <div className="absolute lg:top-[30%] lg:left-[30%] top-[24%] left-[22%] w-40 h-40 z-[2]">
-        <Image
-          src="/images/logo-noword.png"
-          alt="logo"
-          fill
-          quality={100}
-        />
-      </div>
+            <Image
+              src="/images/logo-noword.png"
+              alt="logo"
+              fill
+              quality={100}
+            />
+          </div>
         </div>
       </div>
       <div className="flex flex-col md:flex-row flex-wrap justify-center gap-4 w-full max-w-4xl">
@@ -113,7 +119,7 @@ const Tokenomics: React.FC = () => {
                       backgroundColor: bgColor,
                     }}
                   ></div>
-                  <span className="text-2xl font-normal">{percentage}%</span>
+                  <span className="text-[54px] font-normal">{percentage}%</span>
                 </div>
                 <span className="text-base font-normal text-gray-300">
                   {label}
@@ -143,7 +149,7 @@ const Tokenomics: React.FC = () => {
                     className="w-4 h-4 rounded-full mr-3"
                     style={{ backgroundColor: bgColor }}
                   ></div>
-                  <span className="text-2xl font-normal">{percentage}%</span>
+                  <span className="text-[54px] font-normal">{percentage}%</span>
                 </div>
                 <span className="text-base font-normal text-gray-300">
                   {label}

@@ -2,13 +2,20 @@
 
 import Image from "next/image";
 import { LearnButton } from "./Button";
+import fonts from "@/configs/fonts";
+import clsx from "clsx";
 
 export default function Backer() {
   return (
     <section className="py-20">
       <div className="container">
         <div className="flex flex-col items-center">
-          <div className="text-center font-semibold text-[54px] leading-[54px]">
+          <div
+            className={clsx(
+              fonts.clashDisplay.className,
+              "text-center font-semibold text-[54px]  lg:leading-[54px]"
+            )}
+          >
             TONSQUARE x TON BLOCKCHAIN
           </div>
           <div className="text-center break-words text-sm font-thin w-[60%] mt-4">
@@ -23,7 +30,7 @@ export default function Backer() {
           <div className="lg:w-2/3 w-full bg-form-background border border-blue-600 rounded-xl p-6 flex relative overflow-hidden">
             <div className="w-1/2 pr-4">
               <div className="mb-28">
-                <h3 className="text-white max-w-[60%] font-bold text-2xl mb-4">
+                <h3 className="text-white max-w-[60%] font-bold text-[25px] mb-4">
                   CROSS-CHAIN ASSET FLEXIBILITY
                 </h3>
                 <p className="text-white font-thin text-[16px] w-[100%] mb-4">
@@ -39,14 +46,14 @@ export default function Backer() {
                 src="/images/backers/form1.png"
                 alt="Background Image 1"
                 fill
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: "cover" }}
                 quality={100}
               />
             </div>
           </div>
           <div className="lg:w-1/3 w-full bg-form2-background border border-gray-600 rounded-xl p-6 relative overflow-hidden">
-            <div className="mb-28 max-w-[60%] ">
-              <h3 className="text-white font-bold text-2xl mb-4">
+            <div className="mb-28 max-w-[70%] ">
+              <h3 className="text-white font-bold text-[25px] mb-4">
                 DATA INTEGRITY AND TRANSPARENCY
               </h3>
               <p className="text-white text-sm font-thin mb-4">
@@ -61,12 +68,11 @@ export default function Backer() {
                 src="/images/backers/form2.png"
                 alt="Background Image 2"
                 fill
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: "cover" }}
                 quality={100}
               />
             </div>
           </div>
-          
         </div>
       </div>
     </section>

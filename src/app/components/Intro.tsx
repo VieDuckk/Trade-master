@@ -1,6 +1,8 @@
 import React from "react";
 import WhaleLogoImg from "@/public/images/whale-logo.png";
 import Image from "next/image";
+import fonts from "@/configs/fonts";
+import clsx from "clsx";
 
 export default function Intro() {
   return (
@@ -18,12 +20,22 @@ export default function Intro() {
           quality={100}
         />
         <div className="flex flex-col items-center">
-          <div className="text-center font-semibold text-6xl lg:text-[54px] lg:leading-[54px]">
+          <div
+            className={clsx(
+              fonts.clashDisplay.className,
+              "text-center font-semibold text-[54px]  lg:leading-[54px]"
+            )}
+          >
             TRADE SMARTER
             <br />
             FASTER & SAFER
           </div>
-          <div className="text-center font-light text-[16px] break-words w-[60%] mt-4">
+          <div
+            className={clsx(
+              fonts.inter.className,
+              "text-center font-thin text-[16px] break-words w-[60%] mt-4"
+            )}
+          >
             Welcome to TON Fusion, the premier DEX aggregator built on
             TONSquare, offering lightning-fast swaps, high-yield staking, and
             deep liquidity pools.

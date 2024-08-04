@@ -7,25 +7,33 @@ const Footer = () => {
     <div className="container flex flex-col min-h-[526px] justify-between bg-primary-background text-white p-6 relative">
       <div className="flex flex-col justify-start items-start ml-8 ">
         <div className="text-left mb-8">
-          <h1 className="text-5xl font-semibold ">JOIN OUR COMMUNITY</h1>
+          <h1 className="text-[54px] font-semibold ">JOIN OUR COMMUNITY</h1>
         </div>
         <div className="flex space-x-4">
-          <Link href="https://t.me/yourtelegram" passHref className="flex">
+          <a href="https://t.me/yourtelegram" className="flex">
             <Button className="flex items-center text-sm border h-10 border-white rounded-xl bg-transparent">
-              <Image src="/icons/telegram.svg" alt="telegram" width={20} height={20} quality={100} />
+              <Image
+                src="/icons/telegram.svg"
+                alt="telegram"
+                width={20}
+                height={20}
+                quality={100}
+              />
               <span className="ml-2">Telegram</span>
             </Button>
-          </Link>
-          <Link
-            href="https://twitter.com/yourtwitter"
-            passHref
-            className="flex"
-          >
+          </a>
+          <a href="https://twitter.com/yourtwitter" className="flex">
             <Button className="flex items-center text-sm border h-10 border-white rounded-xl bg-transparent">
-              <Image src="/icons/twitter.svg" alt="twitter" width={20} height={20} quality={100} />
+              <Image
+                src="/icons/twitter.svg"
+                alt="twitter"
+                width={20}
+                height={20}
+                quality={100}
+              />
               <span className="ml-2">Twitter</span>
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
       <div className="w-full mb-4 flex justify-between items-end">
@@ -37,7 +45,7 @@ const Footer = () => {
           src="/images/light.png"
           alt="Background Image 2"
           fill
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: "cover" }}
           quality={100}
         />
       </div>

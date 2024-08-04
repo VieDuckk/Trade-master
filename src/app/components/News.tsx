@@ -19,7 +19,10 @@ export default function News() {
     <section id="news" className="relative py-14">
       <div className="container relative z-[1]">
         <div
-          className="text-center uppercase font-semibold text-[54px] leading-[54px] pb-20"
+          className={clsx(
+            fonts.clashDisplay.className,
+            "text-center font-semibold text-[54px] lg:leading-[54px] py-4"
+          )}
         >
           WHY CHOOSE TON FUSION?
         </div>
@@ -84,13 +87,13 @@ export default function News() {
                         className="w-full h-48 object-cover drop-shadow-md"
                       />
                     </div>
-                    <div className="space-y-2 flex flex-col p-6">
-                      <h4
-                        className={clsx(
-                          fonts.cinzel.className,
-                          "capitalize font-bold text-xl sm:text-2xl !leading-tight"
-                        )}
-                      >
+                    <div
+                      className={clsx(
+                        fonts.inter.className,
+                        "space-y-2 flex flex-col p-6"
+                      )}
+                    >
+                      <h4 className="capitalize font-bold text-3xl !leading-tight">
                         {item.title}
                       </h4>
                       <p className="text-base">{item.description}</p>

@@ -1,6 +1,8 @@
 
 import React from "react";
 import Button from "./Button";
+import fonts from "@/configs/fonts";
+import clsx from "clsx";
 
 interface Phase {
   title: string;
@@ -74,7 +76,8 @@ const Roadmap: React.FC = () => {
     <div className="bg-roadmap-background text-white py-28 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center">
-          <div className="text-center uppercase font-semibold text-[54px] leading-[54px]">
+        <div className={clsx(
+                          fonts.clashDisplay.className,"text-center uppercase font-semibold text-[54px]  lg:leading-[54px]")}>
             Roadmap
           </div>
           <div className="text-center break-words text-sm font-thin w-[60%] mt-4">

@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
-
+import fonts from "@/configs/fonts";
+import clsx from "clsx";
 
 export default function IntroVideo() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -43,10 +43,20 @@ export default function IntroVideo() {
     <div className="relative py-20 ">
       <div className="container max-w-screen-xl bg-form-background pb-16 rounded-lg">
         <div className="flex flex-col items-center pt-16">
-          <div className="text-center font-semibold text-[54px] leading-[54px]">
+          <div
+            className={clsx(
+              fonts.clashDisplay.className,
+              "text-center font-semibold text-[54px]  lg:leading-[54px]"
+            )}
+          >
             THE POWER OF AGGREGATION
           </div>
-          <div className="text-center font-light text-[16px] break-words w-[70%] lg:w-[60%] m-7">
+          <div
+            className={clsx(
+              fonts.inter.className,
+              "text-center font-thin text-[16px] break-words w-[70%] lg:w-[60%] m-7"
+            )}
+          >
             TON Fusion’s intelligent routing system analyzes multiple DEXs in
             real-time to find the optimal trading path. This ensures you
             consistently receive the best possible price for your trades.
@@ -67,23 +77,19 @@ export default function IntroVideo() {
             Your browser does not support the video tag.
           </video>
           {!isPlaying && (
-          <div className="flex items-center justify-center w-12 h-12 bg-slate-100 text-[#3636cc] rounded-full z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none cursor-pointer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              d="M5 3L19 12L5 21V3Z"
-            />
-          </svg>
-        </div>
-                 
+            <div className="flex items-center justify-center w-12 h-12 bg-slate-100 text-[#3636cc] rounded-full z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none cursor-pointer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-6 h-6"
+              >
+                <path d="M5 3L19 12L5 21V3Z" />
+              </svg>
+            </div>
           )}
         </div>
       </div>
     </div>
   );
 }
-
