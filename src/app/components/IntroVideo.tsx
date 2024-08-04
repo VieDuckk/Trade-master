@@ -46,7 +46,7 @@ export default function IntroVideo() {
           <div className="text-center font-semibold text-[54px] leading-[54px]">
             THE POWER OF AGGREGATION
           </div>
-          <div className="text-center font-light text-[16px] break-words w-[60%] m-7">
+          <div className="text-center font-light text-[16px] break-words w-[70%] lg:w-[60%] m-7">
             TON Fusion’s intelligent routing system analyzes multiple DEXs in
             real-time to find the optimal trading path. This ensures you
             consistently receive the best possible price for your trades.

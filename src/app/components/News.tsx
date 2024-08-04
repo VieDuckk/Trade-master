@@ -16,24 +16,35 @@ export default function News() {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <section id="news" className="relative text-[#534532] py-14">
+    <section id="news" className="relative py-14">
       <div className="container relative z-[1]">
-        <h2
-          className={clsx(
-            fonts.cinzel.className,
-            "capitalize font-bold text-3xl text-center text-white sm:text-4xl md:text-5xl !leading-tight mb-10"
-          )}
+        <div
+          className="text-center uppercase font-semibold text-[54px] leading-[54px] pb-20"
         >
           WHY CHOOSE TON FUSION?
-        </h2>
+        </div>
 
         <div className="relative px-12">
           <Swiper
             modules={[Navigation, Pagination, EffectCoverflow]}
             spaceBetween={30}
-            slidesPerView={3}
+            slidesPerView={1}
             centeredSlides={true}
             loop={false}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+              },
+            }}
             navigation={{
               nextEl: ".custom-swiper-button-next",
               prevEl: ".custom-swiper-button-prev",

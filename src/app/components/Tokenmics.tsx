@@ -75,11 +75,11 @@ const Tokenomics: React.FC = () => {
       <div className="text-center uppercase font-semibold text-[54px] leading-[54px] mb-5">
         Tokenomics
       </div>
-      <div className="w-full max-w-md mb-8 relative">
+      <div className="lg:w-[448px] lg:h-[448px] w-[300px] h-[300px] mb-8 relative">
         <div className="absolute inset-0 bg-chart-background rounded-full blur-xl opacity-50"></div>
-        <div className="relative bg-chart-background rounded-full p-5">
+        <div className="relative lg:w-[448px] lg:h-[448px] w-[300px] h-[300px] bg-chart-background rounded-full p-5">
           <Doughnut data={data} options={options} ref={chartRef} />
-          <div className="absolute top-[30%] left-[30%] w-40 h-40 z-[2]">
+          <div className="absolute lg:top-[30%] lg:left-[30%] top-[24%] left-[22%] w-40 h-40 z-[2]">
         <Image
           src="/images/logo-noword.png"
           alt="logo"

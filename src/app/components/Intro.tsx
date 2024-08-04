@@ -9,16 +9,16 @@ export default function Intro() {
       {/* <div className=" bg-[url('/images/intro-background.png')] bg-no-repeat bg-center absolute top-0 left-0 w-full h-full -z-[1] p-10 ">
       </div> */}
 
-      <div className="flex flex-col items-center justify-center min-h-screen w-full h-[1010px] pb-20 pt-36">
+      <div className="relative flex flex-col items-center justify-center min-h-screen w-full h-[1010px] pt-20 pb-36">
         <Image
           src="/images/intro-background.png"
           alt="Background"
-          className="absolute inset-0 object-fit: contain -z-[1]"
+          className="inset-0 object-fit: contain -z-[1]"
           fill
           quality={100}
         />
         <div className="flex flex-col items-center">
-          <div className="text-center font-semibold text-[54px] leading-[54px]">
+          <div className="text-center font-semibold text-6xl lg:text-[54px] lg:leading-[54px]">
             TRADE SMARTER
             <br />
             FASTER & SAFER
