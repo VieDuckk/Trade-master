@@ -4,14 +4,22 @@ import Image from "next/image";
 import fonts from "@/configs/fonts";
 import clsx from "clsx";
 
-export default function Intro() {
-  return (
-    <section className="relative h-[1010px]">
-      <div className="absolute top-0 left-0 w-full h-full bg-[#030712] -z-[2]"></div>
-      {/* <div className=" bg-[url('/images/intro-background.png')] bg-no-repeat bg-center absolute top-0 left-0 w-full h-full -z-[1] p-10 ">
-      </div> */}
+import { Trans } from 'react-i18next/TransWithoutContext'
+import { languages, fallbackLng } from '../../i18n/settings'
+import { useTranslation } from '../../i18n/client'
 
-      <div className="relative flex flex-col items-center justify-center min-h-screen w-full h-[1010px] pt-20 pb-36">
+export default function Intro ({ params: { lng } }: {
+  params: {
+    lng: string;
+  };
+}) {
+  if (languages.indexOf(lng) < 0) lng = fallbackLng
+  const { t } = useTranslation(lng,'intro')
+  return (
+    <section className="relative h-auto">
+      <div className="absolute top-0 left-0 w-full h-full bg-[#030712] -z-[2]"></div>
+
+      <div className="relative flex flex-col items-center justify-center min-h-screen w-full h-auto pt-20 pb-36">
         <Image
           src="/images/intro-background.png"
           alt="Background"
@@ -22,13 +30,14 @@ export default function Intro() {
         <div className="flex flex-col items-center">
           <div
             className={clsx(
-              fonts.clashDisplay.className,
-              "text-center font-semibold text-[54px]  lg:leading-[54px]"
+              fonts.kanit.className,
+              "text-center font-semibold text-4xl lg:text-[54px] w-[53%] lg:leading-[54px] mt-36"
             )}
           >
-            TRADE SMARTER
-            <br />
-            FASTER & SAFER
+             <Trans t={t}  i18nKey="intro">
+             TRADE SMARTER FASTER & SAFER
+            </Trans>
+            
           </div>
           <div
             className={clsx(
@@ -36,9 +45,9 @@ export default function Intro() {
               "text-center font-thin text-[16px] break-words w-[60%] mt-4"
             )}
           >
-            Welcome to TON Fusion, the premier DEX aggregator built on
-            TONSquare, offering lightning-fast swaps, high-yield staking, and
-            deep liquidity pools.
+             <Trans t={t}  i18nKey="intro-content">
+             Welcome to TON Fusion, the premier DEX aggregator built on TONSquare, offering lightning-fast swaps, high-yield staking, and deep liquidity pools.
+            </Trans>
           </div>
         </div>
 

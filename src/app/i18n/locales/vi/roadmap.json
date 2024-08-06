@@ -1,0 +1,50 @@
+{
+    "roadmap":"Lộ trình",
+    "roadmap-description": "Thực hiện theo lộ trình chiến lược của chúng tôi được thiết kế để đảm bảo tăng trưởng liên tục, đổi mới và nâng cao hệ sinh thái TON Fusion. Mỗi giai đoạn tập trung vào việc cung cấp các tính năng và cải tiến chính thúc đẩy nền tảng tiến lên.",
+    "roadmap-title" : {
+        "title1": "PHÁT TRIỂN & TESTING",
+        "title2": "RA MẮT & TĂNG TRƯỞNG",
+        "title3": "MỞ RỘNG và TỐI ƯU HÓA",
+        "title4": "PHÁT TRIỂN TIẾN BỘ"
+    },
+    "roadmap-quarter" : {
+        "quarter1": "Quý 2 - 2024",
+        "quarter2": "Quý 3 - 2024",
+        "quarter3": "Quý 4 - 2024",
+        "quarter4": "Quý 1 - 2025"
+    },
+    "roadmap-items1" : {
+        "item1": "Triển khai hợp đồng thông minh",
+        "item2": "Tính năng cốt lõi",
+        "item3": "Tích hợp DEX",
+        "item4": "Kiểm tra nội bộ",
+        "item5": "Phát triển front-end",
+        "item6": "Kiểm tra chấp nhận của người dùng"
+    },
+    "roadmap-items2" : {
+        "item1": "Triển khai Mainnet",
+        "item2": "Chiến dịch tiếp thị",
+        "item3": "Phản hồi của người dùng",
+        "item4": "Công cụ phân tích",
+        "item5": "Danh sách CEX",
+        "item6": "Tích hợp DEX bổ sung"
+    },
+    "roadmap-items3" : {
+        "item1": "DEX bổ sung",
+        "item2": "Tối ưu hóa hiệu suất",
+        "item3": "Mở rộng tiếp thị",
+        "item4": "Các tính năng nâng cao",
+        "item5": "Kiểm tra bảo mật",
+        "item6": "Phản hồi của người dùng"
+    },
+    "roadmap-items4" : {
+        "item1": "Các tính năng nâng cao",
+        "item2": "Hỗ trợ Cross-chain",
+        "item3": "Tối ưu hóa thanh khoản",
+        "item4": "Tham gia cộng đồng",
+        "item5": "Tích hợp quản trị",
+        "item6": "Quan hệ đối tác chiến lược"
+    }
+  }
+   
+ 

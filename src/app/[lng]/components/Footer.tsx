@@ -2,12 +2,26 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
 
-const Footer = () => {
+import { Trans } from 'react-i18next/TransWithoutContext'
+import { languages, fallbackLng } from '../../i18n/settings'
+import { useTranslation } from '../../i18n/client'
+
+export default function Footer ({ params: { lng } }: {
+  params: {
+    lng: string;
+  };
+}) {
+  if (languages.indexOf(lng) < 0) lng = fallbackLng
+  const { t } = useTranslation(lng,'footer')
   return (
     <div className="container flex flex-col min-h-[526px] justify-between bg-primary-background text-white p-6 relative">
       <div className="flex flex-col justify-start items-start ml-8 ">
         <div className="text-left mb-8">
-          <h1 className="text-[54px] font-semibold ">JOIN OUR COMMUNITY</h1>
+          <h1 className="text-[54px] font-semibold ">
+          <Trans t={t}  i18nKey="community">
+          JOIN OUR COMMUNITY
+            </Trans>
+            </h1>
         </div>
         <div className="flex space-x-4">
           <a href="https://t.me/yourtelegram" className="flex">
@@ -53,4 +67,3 @@ const Footer = () => {
   );
 };
 
-export default Footer;

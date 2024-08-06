@@ -14,6 +14,10 @@ import { Doughnut } from "react-chartjs-2";
 import fonts from "@/configs/fonts";
 import clsx from "clsx";
 
+import { Trans } from "react-i18next/TransWithoutContext";
+import { languages, fallbackLng } from "../../i18n/settings";
+import { useTranslation } from "../../i18n/client";
+
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 ChartJS.defaults.set("elements.arc", {
@@ -29,7 +33,15 @@ interface DoughnutChartData extends ChartData<"doughnut", number[], string> {
   }>;
 }
 
-const Tokenomics: React.FC = () => {
+export default function Roadmap({
+  params: { lng },
+}: {
+  params: {
+    lng: string;
+  };
+}) {
+  if (languages.indexOf(lng) < 0) lng = fallbackLng;
+  const { t } = useTranslation(lng, "tokenomics");
   const chartRef = useRef<ChartJS<"doughnut"> | null>(null);
 
   const data: DoughnutChartData = {
@@ -75,11 +87,13 @@ const Tokenomics: React.FC = () => {
     <div className="container relative flex flex-col items-center justify-center min-h-screen bg-primary-background text-white p-6 mb-10">
       <div
         className={clsx(
-          fonts.clashDisplay.className,
-          "text-center uppercase font-semibold text-[54px]  lg:leading-[54px] mb-5"
+          fonts.kanit.className,
+          "text-center font-semibold text-4xl lg:text-[54px] lg:leading-[54px] uppercase mb-5"
         )}
       >
-        Tokenomics
+         <Trans t={t} i18nKey="tokenomics">
+         Tokenomics
+            </Trans>
       </div>
       <div className="lg:w-[448px] lg:h-[448px] w-[300px] h-[300px] mb-8 relative">
         <div className="absolute inset-0 bg-chart-background rounded-full blur-xl opacity-50"></div>
@@ -122,7 +136,9 @@ const Tokenomics: React.FC = () => {
                   <span className="text-[28px] font-medium">{percentage}%</span>
                 </div>
                 <span className="text-base font-extralight text-gray-300">
-                  {label}
+                  <Trans t={t} i18nKey={`label${index + 1}`}>
+                    {label}
+                  </Trans>
                 </span>
               </div>
             );
@@ -161,6 +177,4 @@ const Tokenomics: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default Tokenomics;
+}

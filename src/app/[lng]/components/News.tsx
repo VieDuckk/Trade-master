@@ -11,8 +11,17 @@ import clsx from "clsx";
 import "swiper/css";
 
 import type { Swiper as SwiperType } from "swiper/types";
+import { Trans } from 'react-i18next/TransWithoutContext'
+import { languages, fallbackLng } from '../../i18n/settings'
+import { useTranslation } from '../../i18n/client'
 
-export default function News() {
+export default function News ({ params: { lng } }: {
+  params: {
+    lng: string;
+  };
+}) {
+  if (languages.indexOf(lng) < 0) lng = fallbackLng
+  const { t } = useTranslation(lng,'news')
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
@@ -20,11 +29,14 @@ export default function News() {
       <div className="container relative z-[1]">
         <div
           className={clsx(
-            fonts.clashDisplay.className,
-            "text-center font-semibold text-[54px] lg:leading-[54px] py-4"
+            fonts.kanit.className,
+            "text-center font-semibold text-4xl lg:text-[54px] lg:leading-[54px] py-4"
           )}
         >
+          <Trans t={t}  i18nKey="news">
           WHY CHOOSE TON FUSION?
+            </Trans>
+          
         </div>
 
         <div className="relative px-12">
@@ -72,7 +84,7 @@ export default function News() {
               swiperRef.current = swiper;
             }}
           >
-            {news.map((item) => (
+            {news.map((item,index) => (
               <SwiperSlide key={item.id}>
                 <div
                   className={clsx(
@@ -94,9 +106,15 @@ export default function News() {
                       )}
                     >
                       <h4 className="capitalize font-bold text-3xl !leading-tight">
-                        {item.title}
+                      <Trans t={t}  i18nKey={`news-title-${index + 1}`}>
+                     {item.title}
+                  </Trans>
                       </h4>
-                      <p className="text-base">{item.description}</p>
+                      <p className="text-base">
+                      <Trans t={t}  i18nKey={`news-description-${index + 1}`}>
+                      {item.description}
+                  </Trans>
+                  </p>
                     </div>
                     <div className="p-6">
                       <LearnButton className="w-[100%] border-none" />

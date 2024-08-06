@@ -1,0 +1,50 @@
+{
+    "roadmap":"Roadmap",
+    "roadmap-description": "Follow our strategic roadmap designed to ensure continuous growth,innovation, and the enhancement of the TON Fusion ecosystem. Eachphase focuses on delivering key features and improvements that drive the platform forward.",
+    "roadmap-title" : {
+        "title1": "DEVELOPMENT & TESTING",
+        "title2": "LAUNCH & INITIAL GROWTH",
+        "title3": "EXPANSION & OPTIMIZATION",
+        "title4": "ADVANCED DEVELOPMENT"
+    },
+    "roadmap-quarter" : {
+        "quarter1": "Quarter 2 - 2024",
+        "quarter2": "Quarter 3 - 2024",
+        "quarter3": "Quarter 4 - 2024",
+        "quarter4": "Quarter 1 - 2025"
+    },
+    "roadmap-items1" : {
+        "item1": "Smart contracts deployment",
+        "item2": "Core features",
+        "item3": "DEX integrations",
+        "item4": "Internal testing",
+        "item5": "Front-end development",
+        "item6": "User acceptance testing"
+    },
+    "roadmap-items2" : {
+        "item1": "Mainnet deployment",
+        "item2": "Marketing campaigns",
+        "item3": "User feedback",
+        "item4": "Analytics tools",
+        "item5": "CEX listing",
+        "item6": "Additional DEX integrations"
+    },
+    "roadmap-items3" : {
+        "item1": "Additional DEXes",
+        "item2": "Performance optimization",
+        "item3": "Marketing expansion",
+        "item4": "Advanced features",
+        "item5": "Security audits",
+        "item6": "User feedback"
+    },
+    "roadmap-items4" : {
+        "item1": "Advanced features",
+        "item2": "Cross-chain support",
+        "item3": "Liquidity optimization",
+        "item4": "Community engagement",
+        "item5": "Governance integration",
+        "item6": "Strategic partnership"
+    }
+  }
+   
+ 

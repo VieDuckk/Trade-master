@@ -4,7 +4,17 @@ import { useEffect, useRef, useState } from "react";
 import fonts from "@/configs/fonts";
 import clsx from "clsx";
 
-export default function IntroVideo() {
+import { Trans } from 'react-i18next/TransWithoutContext'
+import { languages, fallbackLng } from '../../i18n/settings'
+import { useTranslation } from '../../i18n/client'
+
+export default function IntroVideo ({ params: { lng } }: {
+  params: {
+    lng: string;
+  };
+}) {
+  if (languages.indexOf(lng) < 0) lng = fallbackLng
+  const { t } = useTranslation(lng,'intro-video')
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -45,11 +55,13 @@ export default function IntroVideo() {
         <div className="flex flex-col items-center pt-16">
           <div
             className={clsx(
-              fonts.clashDisplay.className,
-              "text-center font-semibold text-[54px]  lg:leading-[54px]"
+              fonts.kanit.className,
+              "text-center font-semibold text-4xl lg:text-[54px] lg:leading-[54px]"
             )}
           >
-            THE POWER OF AGGREGATION
+             <Trans t={t}  i18nKey="intro-video">
+             THE POWER OF AGGREGATION
+            </Trans>
           </div>
           <div
             className={clsx(
@@ -57,11 +69,9 @@ export default function IntroVideo() {
               "text-center font-thin text-[16px] break-words w-[70%] lg:w-[60%] m-7"
             )}
           >
-            TON Fusion’s intelligent routing system analyzes multiple DEXs in
-            real-time to find the optimal trading path. This ensures you
-            consistently receive the best possible price for your trades.
-            Combined with our deep liquidity pools, you can execute large orders
-            with minimal market impact.
+            <Trans t={t}  i18nKey="intro-video-content">
+            TON Fusion`s intelligent routing system analyzes multiple DEXs in real-time to find the optimal trading path. This ensures you consistently receive the best possible price for your trades. Combined with our deep liquidity pools, you can execute large orders with minimal market impact.
+            </Trans>   
           </div>
         </div>
 
@@ -74,7 +84,9 @@ export default function IntroVideo() {
             loop={false}
           >
             <source src="/videos/crypto.mp4" type="video/mp4" />
+            <Trans t={t}  i18nKey="intro-video-warning">
             Your browser does not support the video tag.
+            </Trans>   
           </video>
           {!isPlaying && (
             <div className="flex items-center justify-center w-12 h-12 bg-slate-100 text-[#3636cc] rounded-full z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none cursor-pointer">
